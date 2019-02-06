@@ -16,7 +16,7 @@ let mongoUrl;
 if (process.env.NODE_ENV === 'dev') {
   mongoUrl = 'mongodb://localhost:27017/coffee';
 } else {
-  mongoUrl = 'mongodb://coffee-user:delaluz8@ds163164.mlab.com:63164/coffee';
+  mongoUrl = process.env.MONGO_URI;
 }
 
 process.env.mongoUrl = mongoUrl;
