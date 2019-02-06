@@ -13,7 +13,7 @@ app.use(bodyParser.json());
 // import routes
 app.use(require('./routes/user'));
 
-mongoose.connect('mongodb://localhost:27017/coffee', { useNewUrlParser: true }, (err, res) => {
+mongoose.connect(process.env.mongoUrl, { useNewUrlParser: true }, (err, res) => {
   if (err) throw err;
 
   console.log('Database online');
